@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <DefaultItemExcludes>$(DefaultItemExcludes);.git*</DefaultItemExcludes>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Reactive" Version="6.0.0" />
+    <PackageReference Include="System.Reactive.Async" Version="6.0.0-alpha.18" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Libraries\Tingle.EventBus\src\Tingle.EventBus\Tingle.EventBus.csproj" />
+    <ProjectReference Include="..\VisusCore.EventBus.Abstractions\VisusCore.EventBus.Abstractions.csproj" />
+  </ItemGroup>
+
+</Project>
