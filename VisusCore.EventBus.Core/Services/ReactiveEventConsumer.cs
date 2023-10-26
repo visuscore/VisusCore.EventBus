@@ -17,6 +17,11 @@ public class ReactiveEventConsumer<TEvent> : IEventConsumer<TEvent>, IDisposable
 
     public Task ConsumeAsync(EventContext<TEvent> context, CancellationToken cancellationToken)
     {
+        if (context is null)
+        {
+            throw new ArgumentNullException(nameof(context));
+        }
+
         _subject.OnNext(context.Event);
 
         return Task.CompletedTask;
